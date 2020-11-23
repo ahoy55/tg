@@ -15,6 +15,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import ru.ahoy.tg.databinding.ActivityMainBinding
+import ru.ahoy.tg.ui.ChatsFragment
+import ru.ahoy.tg.ui.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -117,6 +119,11 @@ class MainActivity : AppCompatActivity() {
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
                     Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT).show()
+                    when(position) {
+                        7 -> supportFragmentManager.beginTransaction()
+                            .addToBackStack(null)
+                            .replace(R.id.dataContainer, SettingsFragment()).commit()
+                    }
                     return false
                 }
             }).build()

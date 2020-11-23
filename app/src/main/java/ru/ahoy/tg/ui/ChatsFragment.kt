@@ -1,4 +1,4 @@
-package ru.ahoy.tg
+package ru.ahoy.tg.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
